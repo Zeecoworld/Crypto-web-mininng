@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section clearfix">
+		<div class="container-fluid">
+			<a href="index.html" class="site-logo">
+				<img src="{% static 'img/logo.png' %}" alt="">
+			</a>
+			<div class="responsive-bar"><i class="fa fa-bars"></i></div>
+		{% if request.user.is_authenticated %}
+			<nav class="main-menu">
+				<ul class="menu-list">
+					<li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+				</ul>
+				<ul class="menu-list">
+					<li><a href="{% url 'logout' %}">Logout</a></li>
+				</ul>
+			</nav>
+		{% else %}
+			<a href="{% url 'register' %}" class="site-btn">Sign Up Free</a>
+			<nav class="main-menu">
+				<ul class="menu-list">
+					<li><a href="{% url 'login' %}">Login</a></li>
+				</ul>
+			</nav>
+		{% endif %}
+		</div>
+	</header>
+	<!-- Header section end -->
+
+
+	<!-- Hero section -->
+	<section class="hero-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 hero-text">
+					<h2>Mining <span>Bitcoin</span> <br>Get Easy</h2>
+					<h4>Use modern progressive technologies of Bitcoin to earn money</h4></br>
+					{% if not request.user.is_authenticated %}
+						<a href="{% url 'register' %}"><button class="site-btn sb-gradients">Get Started</button></a>
+					{% endif %}
+				</div>
+				<div class="col-md-6">
+					<img src="{% static 'img/laptop.png' %}" class="laptop-image" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+
+	<!-- About section -->
+	<section class="about-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 offset-lg-6 about-text">
+					<h5>Bitcoin is first and top trendy cryptocurrency coin.</h5>
+					<p>Bitcoin is one of the most important inventions in all of human history. For the first time ever, anyone can send or receive any amount of money with anyone else, anywhere on the planet, conveniently and without restriction. It’s the dawn of a better, more free world.</p>
+					<a href="{% url 'register' %}" class="site-btn sb-gradients sbg-line mt-5">Get Started</a>
+				</div>
+			</div>
+			<div class="about-img">
+				<img src="{% static 'img/about-img.png' %}" alt="">
+			</div>
+		</div>
+	</section>
+	<!-- About section end -->
+
+
+	<!-- Features section -->
+<center>
+	<section class="features-section spad gradient-bg">
+		<div class="container text-white">
+			<div class="section-title text-center">
+				<h2>Privacy Policy</h2>
+			</div>	
+					<div class="feature-content">
+						<p>This privacy policy ("policy") will help you understand how MiningataGoal uses and protects the data you provide to us when you visit and use miningatagoal.com . We reserve the right to change this policy at any given time, of which you will be promptly updated. If you want to make sure that you are up to date with the latest changes, we advise you to frequently visit this page.
+                            Once you agree to allow our website to use cookies, you also agree to use the data it collects regarding your online behavior (analyze web traffic, web pages you spend the most time on, and websites you visit). The data we collect by using cookies is used to customize our website to your needs. After we use the data for statistical analysis, the data is completely removed from our systems. Please note that cookies don't allow us to gain control of your computer in any way. They are strictly used to monitor which pages you find useful and which you do not so that we can provide a better experience for you. 
+                            At some point, you might wish to restrict the use and collection of your personal data. You can achieve this by doing the following: When you are filling the forms on the website, make sure to check if there is a box which you can leave unchecked, if you don't want to disclose your personal information. If you have already agreed to share your information with us, feel free to contact us via email and we will be more than happy to change this for you. MiningataGoal will not lease, sell or distribute your personal information to any third parties, unless we have your permission. We might do so if the law forces us. Your personal information will be used when we need to send you promotional materials if you agree to this privacy policy.
+                        </p>
+						<!-- <a href="" class="readmore">Readmore</a> -->
+					</div>
+		</div>
+	</section>
+</center>
+	<!-- Features section end -->
+
+
+	<!-- Process section -->
+	
+	
+
+
+	<!-- Newsletter section -->
+
+	<!-- Footer section -->
+	
+{% endblock content %}
