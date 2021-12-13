@@ -83,12 +83,30 @@ WSGI_APPLICATION = 'knonproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE':'django.db.backends.postgresql',
+
+            'NAME': "demmksoepl97ik",
+                                            
+            'USER': "kkmgydhbexkdmg",
+
+            'PASSWORD': "d53d462c3285f6da9f0eaeabf47925bc66f1973980cb92ff9b56ea566e5d6fd1",
+
+            'HOST' : "ec2-52-71-217-158.compute-1.amazonaws.com",
+
+            'PORT' : 5432,
+                                
     }
 }
+
 
 
 # Password validation
