@@ -18,7 +18,7 @@ from django.urls import path, include
 from accounts import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('likes/', admin.site.urls),
     path('', include('knonapp.urls')),
     path('ref=<str:ref_code>/', views.referrals , name="referral"),
     path('account/register/', views.register_view, name="register"),
