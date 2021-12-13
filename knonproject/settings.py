@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-l9t6-cy_3v#q=c(ca%ffk1=1&a7c02iz1ms7%j-kcn7^d2-6f&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['miningatagoal.herokuapp.com']
 
 AUTH_USER_MODEL = 'accounts.User'
 # Application definition
