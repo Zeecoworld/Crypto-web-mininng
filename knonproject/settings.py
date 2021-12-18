@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-l9t6-cy_3v#q=c(ca%ffk1=1&a7c02iz1ms7%j-kcn7^d2-6f&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['miningatagoal.herokuapp.com']
+ALLOWED_HOSTS = ['miningatagoal.azurewebsites.net','miningatagoal.herokuapp.com'] #miningatagoal.azurewebsites.net
 
 AUTH_USER_MODEL = 'accounts.User'
 # Application definition
@@ -83,29 +83,29 @@ WSGI_APPLICATION = 'knonproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE':'django.db.backends.postgresql',
-
-            'NAME': "demmksoepl97ik",
-                                            
-            'USER': "kkmgydhbexkdmg",
-
-            'PASSWORD': "d53d462c3285f6da9f0eaeabf47925bc66f1973980cb92ff9b56ea566e5d6fd1",
-
-            'HOST' : "ec2-52-71-217-158.compute-1.amazonaws.com",
-
-            'PORT' : 5432,
-                                
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE':'django.db.backends.postgresql',
+
+#             'NAME': "demmksoepl97ik",
+                                            
+#             'USER': "kkmgydhbexkdmg",
+
+#             'PASSWORD': "d53d462c3285f6da9f0eaeabf47925bc66f1973980cb92ff9b56ea566e5d6fd1",
+
+#             'HOST' : "ec2-52-71-217-158.compute-1.amazonaws.com",
+
+#             'PORT' : 5432,
+                                
+#     }
+# }
 
 
 
@@ -153,7 +153,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR , "static"),)
 STATIC_ROOT = os.path.join(BASE_DIR , "staticfiles")
 
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/715ff445-662a-40ae-b9e5-6d12db2a68ae/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/miningatagoal",
+    "appService.deploySubpath": "."
+}
