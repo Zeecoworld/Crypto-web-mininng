@@ -1,1 +1,1 @@
-web: gunicorn knonproject.wsgi
+web: gunicorn knonproject.wsgi --log-file -
