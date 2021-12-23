@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l9t6-cy_3v#q=c(ca%ffk1=1&a7c02iz1ms7%j-kcn7^d2-6f&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['miningatagoal.azurewebsites.net','miningatagoal.herokuapp.com'] #miningatagoal.azurewebsites.net
 
@@ -152,7 +152,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR , "static"),)
 
 
-STATIC_ROOT = os.path.join(BASE_DIR , "staticfiles")
+
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
