@@ -27,11 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l9t6-cy_3v#q=c(ca%ffk1=1&a7c02iz1ms7%j-kcn7^d2-6f&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['miningatagoal.azurewebsites.net','miningatagoal.herokuapp.com'] #miningatagoal.azurewebsites.net
+# ALLOWED_HOSTS = ['miningatagoal.azurewebsites.net','miningatagoal.herokuapp.com'] #miningatagoal.azurewebsites.net
 
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'accounts.User'
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 ]
 
@@ -85,29 +86,29 @@ WSGI_APPLICATION = 'knonproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE':'django.db.backends.postgresql',
-
-            'NAME': "d7qpjv9q7f6vff",
-                                            
-            'USER': "vjzpdejoujiqmd",
-
-            'PASSWORD': "4bfa87d3058abeb1c3b4889a3e192defd12dd747bd2da8874e5bd09a2435b8e3",
-
-            'HOST' : "ec2-54-157-113-118.compute-1.amazonaws.com",
-
-            'PORT' : 5432,
-                                
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE':'django.db.backends.postgresql',
+
+#             'NAME': "d7qpjv9q7f6vff",
+                                            
+#             'USER': "vjzpdejoujiqmd",
+
+#             'PASSWORD': "4bfa87d3058abeb1c3b4889a3e192defd12dd747bd2da8874e5bd09a2435b8e3",
+
+#             'HOST' : "ec2-54-157-113-118.compute-1.amazonaws.com",
+
+#             'PORT' : 5432,
+                                
+#     }
+# }
 
 
 
@@ -149,14 +150,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = os.path.join(BASE_DIR , "static")
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR , "staticfiles")
 
 
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
