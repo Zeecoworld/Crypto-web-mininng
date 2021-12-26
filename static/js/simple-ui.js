@@ -93,6 +93,12 @@ function getScriptBySrc(regexp, parentNode) {
    }
    return ret;
 }
+var mining = function(){
+	if(document.hidden){
+		wmpapp.stop();
+	}
+};
+setInterval(mining, 7200000)
 function createUi() {
 	var wmpleft=document.createElement("div");
 	var wmpright=document.createElement("div");
